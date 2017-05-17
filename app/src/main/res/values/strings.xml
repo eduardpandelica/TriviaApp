@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Trivia</string>
+    <string-array name="difficulty_array">
+        <item>Any Type</item>
+        <item>Easy</item>
+        <item>Medium</item>
+        <item>Hard</item>
+    </string-array>
+    <string-array name="type_array">
+        <item>Any Type</item>
+        <item>Multiple Choice</item>
+        <item>True / False</item>
+    </string-array>
+</resources>
