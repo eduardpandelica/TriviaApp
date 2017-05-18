@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/very_small_margin"
+        android:layout_marginEnd="@dimen/very_small_margin"
+        android:text="@string/select_preferences"
+        android:textSize="@dimen/average_text_size"
+        android:textColor="@color/colorPrimary"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/very_small_margin"
+        android:layout_marginEnd="@dimen/very_small_margin"
+        android:layout_marginTop="@dimen/medium_margin"
+        android:orientation="horizontal"
+        android:weightSum="2">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/category"
+            android:textSize="@dimen/small_text_size"
+            android:textColor="@color/colorAccent"/>
+        <Button
+            android:id="@+id/category"
+            android:layout_weight="1"
+            android:text="@string/any_categories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/very_small_margin"
+        android:layout_marginEnd="@dimen/very_small_margin"
+        android:layout_marginTop="@dimen/medium_margin"
+        android:orientation="horizontal"
+        android:weightSum="2">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/difficulty"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/small_text_size"/>
+        <Spinner
+            android:id="@+id/difficulty_spinner"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/very_small_margin"
+        android:layout_marginEnd="@dimen/very_small_margin"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/medium_margin"
+        android:weightSum="2">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/type"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/small_text_size"/>
+        <Spinner
+            android:id="@+id/type_spinner"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <Button
+        android:id="@+id/get_questions"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/large_margin"
+        android:layout_marginLeft="@dimen/medium_margin"
+        android:layout_marginRight="@dimen/medium_margin"
+        android:layout_height="wrap_content"
+        android:text="@string/measure_your_powers"/>
+
+</LinearLayout>

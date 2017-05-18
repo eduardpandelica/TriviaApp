@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="5"
+    tools:context="adrian.trivia.Welcome">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/very_small_margin"
+        android:layout_marginEnd="@dimen/very_small_margin"
+        android:src="@mipmap/trivia"
+        android:layout_weight="1"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/very_small_margin"
+        android:layout_marginEnd="@dimen/very_small_margin"
+        android:text="@string/welcome_to_trivia_are_you_ready"
+        android:textColor="@color/colorPrimary"
+        android:layout_weight="2"
+        android:textSize="@dimen/welcome_text_size"
+        android:gravity="center"/>
+    <Button
+        android:id="@+id/start"
+        android:layout_width="@dimen/very_large_size"
+        android:layout_gravity="center"
+        android:layout_height="@dimen/average_margin"
+        android:text="@string/start_challenge"
+        android:textColor="@color/colorAccent"
+        android:layout_weight="1"/>
+    <Button
+        android:id="@+id/exit"
+        android:layout_width="@dimen/very_large_size"
+        android:layout_gravity="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="@string/i_m_too_scared"
+        android:layout_height="@dimen/average_margin"
+        android:layout_weight="1"/>
+
+</LinearLayout>

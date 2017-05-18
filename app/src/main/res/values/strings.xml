@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Trivia</string>
+    <string name="your_score">Your Score</string>
+    <string name="score">Score</string>
+    <string name="try_again">Try Again</string>
+    <string name="exit">Exit</string>
+    <string name="category">Category:</string>
+    <string name="category_question">Category</string>
+    <string name="difficulty">Difficulty:</string>
+    <string name="difficulty_question">Difficulty</string>
+    <string name="question">Question</string>
+    <string name="next_question">Next Question</string>
+    <string name="false_text">False</string>
+    <string name="true_text">True</string>
+    <string name="response1">Response1</string>
+    <string name="response4">Response4</string>
+    <string name="response3">Response3</string>
+    <string name="response2">Response2</string>
+    <string name="select_preferences">Select preferences:</string>
+    <string name="any_categories">Any Categories</string>
+    <string name="type">Type:</string>
+    <string name="measure_your_powers">Measure your powers</string>
+    <string name="i_m_too_scared">I\'m too scared!</string>
+    <string name="start_challenge">Start challenge</string>
+    <string name="welcome_to_trivia_are_you_ready">Welcome to Trivia! \n Are you ready?</string>
+    <string-array name="difficulty_array">
+        <item>Any Type</item>
+        <item>Easy</item>
+        <item>Medium</item>
+        <item>Hard</item>
+    </string-array>
+    <string-array name="type_array">
+        <item>Any Type</item>
+        <item>Multiple Choice</item>
+        <item>True / False</item>
+    </string-array>
+</resources>
