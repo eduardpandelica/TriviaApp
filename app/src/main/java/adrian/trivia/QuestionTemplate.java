@@ -38,7 +38,7 @@ public class QuestionTemplate extends AppCompatActivity implements View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         selected_answer = 0;
-        q = (Questions)getIntent().getSerializableExtra("Questions");
+        q = getIntent().getParcelableExtra("Questions");
         list = q.getResults();
         if(list.get(0).getType().equals("boolean")) {
             setContentView(R.layout.activity_question);
@@ -142,7 +142,7 @@ public class QuestionTemplate extends AppCompatActivity implements View.OnClickL
                             }
                         }
                     }
-                    Intent myIntent = null;
+                    Intent myIntent;
                     if (list.size() > 1) {
                         list.remove(0);
                         q.setResults(list);

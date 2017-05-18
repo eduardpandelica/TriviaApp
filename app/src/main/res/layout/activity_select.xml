@@ -8,42 +8,48 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Select preferences:"
-        android:textSize="25dp"
+        android:layout_marginStart="@dimen/very_small_margin"
+        android:layout_marginEnd="@dimen/very_small_margin"
+        android:text="@string/select_preferences"
+        android:textSize="@dimen/average_text_size"
         android:textColor="@color/colorPrimary"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginStart="@dimen/very_small_margin"
+        android:layout_marginEnd="@dimen/very_small_margin"
+        android:layout_marginTop="@dimen/medium_margin"
         android:orientation="horizontal"
         android:weightSum="2">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Category:"
-            android:textSize="20dp"
+            android:text="@string/category"
+            android:textSize="@dimen/small_text_size"
             android:textColor="@color/colorAccent"/>
         <Button
             android:id="@+id/category"
             android:layout_weight="1"
-            android:text="Any Categories"
+            android:text="@string/any_categories"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginStart="@dimen/very_small_margin"
+        android:layout_marginEnd="@dimen/very_small_margin"
+        android:layout_marginTop="@dimen/medium_margin"
         android:orientation="horizontal"
         android:weightSum="2">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Difficulty:"
+            android:text="@string/difficulty"
             android:textColor="@color/colorAccent"
-            android:textSize="20dp"/>
+            android:textSize="@dimen/small_text_size"/>
         <Spinner
             android:id="@+id/difficulty_spinner"
             android:layout_weight="1"
@@ -53,16 +59,18 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/very_small_margin"
+        android:layout_marginEnd="@dimen/very_small_margin"
         android:orientation="horizontal"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="@dimen/medium_margin"
         android:weightSum="2">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Type:"
+            android:text="@string/type"
             android:textColor="@color/colorAccent"
-            android:textSize="20dp"/>
+            android:textSize="@dimen/small_text_size"/>
         <Spinner
             android:id="@+id/type_spinner"
             android:layout_weight="1"
@@ -72,10 +80,10 @@
     <Button
         android:id="@+id/get_questions"
         android:layout_width="match_parent"
-        android:layout_marginTop="100dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
+        android:layout_marginTop="@dimen/large_margin"
+        android:layout_marginLeft="@dimen/medium_margin"
+        android:layout_marginRight="@dimen/medium_margin"
         android:layout_height="wrap_content"
-        android:text="Measure your powers"/>
+        android:text="@string/measure_your_powers"/>
 
 </LinearLayout>

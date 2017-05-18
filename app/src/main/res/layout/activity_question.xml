@@ -8,78 +8,90 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/very_small_margin"
+        android:layout_marginEnd="@dimen/very_small_margin"
         android:orientation="horizontal"
         android:weightSum="2">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Category:"
+            android:text="@string/category"
             android:textColor="@color/colorAccent"
-            android:textSize="20dp"/>
+            android:textSize="@dimen/small_text_size"/>
         <TextView
             android:id="@+id/category_text"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Category"
+            android:text="@string/category_question"
             android:gravity="center"
-            android:textSize="15dp"/>
+            android:textSize="@dimen/small_text_size"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/very_small_margin"
+        android:layout_marginEnd="@dimen/very_small_margin"
         android:orientation="horizontal"
         android:weightSum="2">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Difficulty:"
+            android:text="@string/difficulty"
             android:textColor="@color/colorAccent"
-            android:textSize="20dp"/>
+            android:textSize="@dimen/small_text_size"/>
         <TextView
             android:id="@+id/difficulty"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Difficulty"
+            android:text="@string/difficulty_question"
             android:gravity="center"
-            android:textSize="15dp"/>
+            android:textSize="@dimen/small_text_size"/>
     </LinearLayout>
     <TextView
         android:id="@+id/question"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/medium_padding"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Question"
+        android:layout_marginStart="@dimen/very_small_margin"
+        android:layout_marginEnd="@dimen/very_small_margin"
+        android:text="@string/question"
         android:gravity="center"
-        android:textSize="25dp"/>
+        android:textSize="@dimen/average_text_size"/>
     <Button
         android:id="@+id/response_true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginTop="@dimen/very_small_margin"
+        android:layout_marginBottom="@dimen/very_small_margin"
+        android:layout_marginStart="@dimen/very_small_margin"
+        android:layout_marginEnd="@dimen/very_small_margin"
         android:background="@drawable/answer_background"
-        android:text="True"
-        android:textSize="15dp"/>
+        android:text="@string/true_text"
+        android:textSize="@dimen/small_text_size"/>
     <Button
         android:id="@+id/response_false"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginTop="@dimen/very_small_margin"
+        android:layout_marginBottom="@dimen/very_small_margin"
+        android:layout_marginStart="@dimen/very_small_margin"
+        android:layout_marginEnd="@dimen/very_small_margin"
         android:background="@drawable/answer_background"
-        android:text="False"
-        android:textSize="15dp"/>
+        android:text="@string/false_text"
+        android:textSize="@dimen/small_text_size"/>
     <Button
         android:id="@+id/answer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="Next Question"
-        android:textSize="15dp"/>
+        android:layout_marginStart="@dimen/very_small_margin"
+        android:layout_marginEnd="@dimen/very_small_margin"
+        android:layout_marginTop="@dimen/medium_margin"
+        android:text="@string/next_question"
+        android:textSize="@dimen/small_text_size"/>
 
 
 </LinearLayout>

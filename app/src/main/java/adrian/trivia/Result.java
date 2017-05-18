@@ -1,11 +1,14 @@
 package adrian.trivia;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.io.Serializable;
 import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Result implements Serializable{
+public class Result implements Parcelable{
 
 @SerializedName("category")
 @Expose
@@ -26,7 +29,28 @@ private String correctAnswer;
 @Expose
 private List<String> incorrectAnswers = null;
 
-public String getCategory() {
+    protected Result(Parcel in) {
+        category = in.readString();
+        type = in.readString();
+        difficulty = in.readString();
+        question = in.readString();
+        correctAnswer = in.readString();
+        incorrectAnswers = in.createStringArrayList();
+    }
+
+    public static final Creator<Result> CREATOR = new Creator<Result>() {
+        @Override
+        public Result createFromParcel(Parcel in) {
+            return new Result(in);
+        }
+
+        @Override
+        public Result[] newArray(int size) {
+            return new Result[size];
+        }
+    };
+
+    public String getCategory() {
 return category;
 }
 
@@ -74,4 +98,18 @@ public void setIncorrectAnswers(List<String> incorrectAnswers) {
 this.incorrectAnswers = incorrectAnswers;
 }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(category);
+        dest.writeString(type);
+        dest.writeString(difficulty);
+        dest.writeString(question);
+        dest.writeString(correctAnswer);
+        dest.writeStringList(incorrectAnswers);
+    }
 }

@@ -21,7 +21,6 @@ public class Welcome extends AppCompatActivity implements View.OnClickListener{
         mExit = (Button) findViewById(R.id.exit);
         mExit.setOnClickListener(this);
 
-        //  Login screen should have no action bar
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }

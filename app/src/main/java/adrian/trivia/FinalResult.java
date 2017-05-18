@@ -22,7 +22,7 @@ public class FinalResult extends AppCompatActivity implements View.OnClickListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_final);
-        q = (Questions)getIntent().getSerializableExtra("Questions");
+        q = getIntent().getParcelableExtra("Questions");
         score = (TextView) findViewById(R.id.score);
         score.setText(q.getResponseCode().toString());
         exit = (Button) findViewById(R.id.exit);

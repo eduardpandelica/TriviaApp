@@ -5,11 +5,13 @@
               android:layout_height="wrap_content">
     <TextView
         android:id="@+id/crtCategory"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/no_size"
         android:layout_height="wrap_content"
-        android:text="Categorie"
+        android:layout_marginStart="@dimen/very_small_margin"
+        android:layout_marginEnd="@dimen/very_small_margin"
+        android:text="@string/category_question"
         android:padding="10dp"
-        android:textSize="20sp"
+        android:textSize="@dimen/small_text_size"
         android:textColor="@color/colorPrimary"
         android:layout_weight="1"/>
 

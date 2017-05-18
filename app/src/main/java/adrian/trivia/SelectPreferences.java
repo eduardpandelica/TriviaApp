@@ -11,6 +11,9 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.net.UnknownHostException;
+import java.util.concurrent.TimeoutException;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -101,7 +104,6 @@ public class SelectPreferences extends AppCompatActivity implements View.OnClick
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-
         if (requestCode == 1) {
             if(resultCode == Activity.RESULT_OK){
                 category = getCategoryId(data.getStringExtra("Category"));
@@ -111,8 +113,7 @@ public class SelectPreferences extends AppCompatActivity implements View.OnClick
     }
 
     private void get_questions() {
-        Call<Questions> callable = null;
-        System.out.println(category + " " + difficulty + " " + type);
+        Call<Questions> callable;
         if(type == null) {
             if(difficulty == null) {
                 if(category == null) {
@@ -156,21 +157,39 @@ public class SelectPreferences extends AppCompatActivity implements View.OnClick
                         Toast.makeText(SelectPreferences.this, "Select other preferences, no questions found!", Toast.LENGTH_LONG).show();
                     }
                 } else {
-                    Toast.makeText(SelectPreferences.this, "Please select preferences", Toast.LENGTH_LONG).show();
+                    switch(response.code()) {
+                        case 401:
+                            Toast.makeText(SelectPreferences.this, "Please select preferences", Toast.LENGTH_LONG).show();
+                            break;
+                        case 404:
+                            Toast.makeText(SelectPreferences.this, "Page not found", Toast.LENGTH_LONG).show();
+                            break;
+                        case 500:
+                            Toast.makeText(SelectPreferences.this, "Internal server error", Toast.LENGTH_LONG).show();
+                            break;
+                        case 503:
+                            Toast.makeText(SelectPreferences.this, "Service unavailable", Toast.LENGTH_LONG).show();
+                            break;
+                        case 550:
+                            Toast.makeText(SelectPreferences.this, "Permission denied", Toast.LENGTH_LONG).show();
+                            break;
+                    }
                 }
             }
 
             @Override
             public void onFailure(Call<Questions> call, Throwable t) {
                 t.printStackTrace();
-                Toast.makeText(SelectPreferences.this, "Internet problem", Toast.LENGTH_LONG).show();
+                if(t instanceof UnknownHostException)
+                    Toast.makeText(SelectPreferences.this, "Internet problem", Toast.LENGTH_LONG).show();
+                if(t instanceof TimeoutException)
+                    Toast.makeText(SelectPreferences.this, "Connection time expired", Toast.LENGTH_LONG).show();
             }
         });
     }
 
 
     public String getTypeId(String type) {
-        System.out.println(type);
         switch (type) {
             case "Multiple Choice":
                 return "multiple";
@@ -181,7 +200,6 @@ public class SelectPreferences extends AppCompatActivity implements View.OnClick
     }
 
     public String getDifficultyId(String difficulty) {
-        System.out.println(difficulty);
         switch(difficulty) {
             case "Easy":
                 return "easy";
