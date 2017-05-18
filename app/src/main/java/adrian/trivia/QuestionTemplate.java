@@ -21,6 +21,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class QuestionTemplate extends AppCompatActivity implements View.OnClickListener {
 
     private List<Result> list;
+    private List<String> answers;
     private Questions q;
     private Button button1;
     private Button button2;
@@ -49,7 +50,7 @@ public class QuestionTemplate extends AppCompatActivity implements View.OnClickL
             answer = (Button) findViewById(R.id.answer);
             answer.setOnClickListener(this);
         } else {
-            List<String> answers = new ArrayList<>();
+            answers = new ArrayList<>();
             answers.add(list.get(0).getCorrectAnswer());
             answers.add(list.get(0).getIncorrectAnswers().get(0));
             answers.add(list.get(0).getIncorrectAnswers().get(1));
@@ -128,7 +129,16 @@ public class QuestionTemplate extends AppCompatActivity implements View.OnClickL
             case R.id.answer:
                 if(selected_answer == 1) {
                     if (!list.get(0).getType().equals("boolean")) {
-                        if (button1.isSelected()) {
+                        if (button1.isSelected() && list.get(0).getCorrectAnswer().equals(answers.get(0))) {
+                            q.setResponseCode(q.getResponseCode() + 1);
+                        }
+                        if (button2.isSelected() && list.get(0).getCorrectAnswer().equals(answers.get(1))) {
+                            q.setResponseCode(q.getResponseCode() + 1);
+                        }
+                        if (button3.isSelected() && list.get(0).getCorrectAnswer().equals(answers.get(2))) {
+                            q.setResponseCode(q.getResponseCode() + 1);
+                        }
+                        if (button4.isSelected() && list.get(0).getCorrectAnswer().equals(answers.get(3))) {
                             q.setResponseCode(q.getResponseCode() + 1);
                         }
                     } else {
